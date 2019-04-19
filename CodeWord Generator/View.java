@@ -35,9 +35,10 @@ public class View implements ActionListener{
 		//create entry field panel and text field
 		JPanel entryPanel = new JPanel();
 		
-		inputLabel = new JTextArea("");
+		inputLabel = new JTextArea("CODEWORD GENERATOR");
 		inputLabel.setOpaque(false);
 		inputLabel.setFont(myFont);
+		inputLabel.setEditable(false);
 		entryPanel.add(inputLabel);
 		
 		
@@ -46,11 +47,12 @@ public class View implements ActionListener{
 		frame.add(buttonPan, BorderLayout.SOUTH);
 		//set frame to visible to draw all components
 		frame.setVisible(true);
+		clear();
 	}
 	/**
-	 *method to create the password and set the
-	 *text int the two JTextField objects to the
-	 *appropriate String text
+	 *method to create the Codeword and 
+	 *display it in the inputLabel by using 
+	 *the WordGenerator Class
 	 */
 	private void create(){
 		
@@ -60,24 +62,11 @@ public class View implements ActionListener{
 	}
 	
 	/**
-	 *Helper method to reverse a String
-	 *@param orig String to be reversed
-	 *@returns String which is the reverse of orig
-	 */
-	private String reversed(String orig){
-		String output = "";
-		char[] chars = orig.toCharArray();
-		for(int i=chars.length-1;i>=0;i--){
-			output = output + chars[i];
-		}
-		return output;
-	}
-	/**
 	 *Method to clear all text and reset the 
-	 *input size to 0
+	 *inputLabel to read CODEWORD GENERATOR
 	 */
 	private void clear(){
-		inputLabel.setText("");		
+		inputLabel.setText("CODEWORD GENERATOR");		
 	}
 	/**
 	 *implements ActionListner's only method
